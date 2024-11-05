@@ -1,8 +1,10 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/models/cart_item.dart';
 
 import 'food.dart';
 
-class Restaurant extends ChangeNotifier{
+class Restaurant extends ChangeNotifier {
   final List<Food> _menu = [
     Food(
       name: 'Classic Burger',
@@ -43,7 +45,7 @@ class Restaurant extends ChangeNotifier{
     Food(
       name: 'Cheeseburger',
       description: 'The best burger in town',
-      imagePath: 'lib/img/burgers/cheesburger.jfif',
+      imagePath: 'lib/img/burgers/cheeseburger.jfif',
       price: 0.99,
       category: FoodCategory.burgers,
       availableAddons: [
@@ -182,7 +184,51 @@ class Restaurant extends ChangeNotifier{
     Food(
       name: 'Fries',
       description: 'The best fires in town',
-      imagePath: 'lib/img/sides/fires-side.jpg',
+      imagePath: 'lib/img/sides/fries-side.jpg',
+      price: 0.99,
+      category: FoodCategory.sides,
+      availableAddons: [
+        Addon(name: 'Extra quantity', price: 0.99),
+        Addon(name: 'Sauce', price: 1.99),
+      ],
+    ),
+    Food(
+      name: 'Baked Potatoes',
+      description: 'The best potatoes in town',
+      imagePath: 'lib/img/sides/bakedpotatoes-side.jpg',
+      price: 0.99,
+      category: FoodCategory.sides,
+      availableAddons: [
+        Addon(name: 'Extra quantity', price: 0.99),
+        Addon(name: 'Sauce', price: 1.99),
+      ],
+    ),
+    Food(
+      name: 'Corn',
+      description: 'The best corn in town',
+      imagePath: 'lib/img/sides/corn-side.jpg',
+      price: 0.99,
+      category: FoodCategory.sides,
+      availableAddons: [
+        Addon(name: 'Extra quantity', price: 0.99),
+        Addon(name: 'Sauce', price: 1.99),
+      ],
+    ),
+    Food(
+      name: 'Greens sauteed',
+      description: 'The best vegetables in town',
+      imagePath: 'lib/img/sides/greenbeans-side.jfif',
+      price: 0.99,
+      category: FoodCategory.sides,
+      availableAddons: [
+        Addon(name: 'Extra quantity', price: 0.99),
+        Addon(name: 'Sauce', price: 1.99),
+      ],
+    ),
+    Food(
+      name: 'Fried Sweet Potatoes',
+      description: 'The best potatoes in town',
+      imagePath: 'lib/img/sides/sweetpotatoe-side.jpg',
       price: 0.99,
       category: FoodCategory.sides,
       availableAddons: [
@@ -204,5 +250,66 @@ class Restaurant extends ChangeNotifier{
   ];
   List<Food> get menu => _menu;
 
+  List<CartItem> _cart = [];
 
+  void addToCart(Food food, List<Addon> selectedAddons) {
+    CartItem? cartItem = _cart.firstWhereOrNull(
+      (item) {
+        bool isSameFood = item.food == food;
+        bool isSameAddons =
+            ListEquality().equals(item.selectedAddons, selectedAddons);
+
+        return isSameFood && isSameAddons;
+      },
+    );
+    if (cartItem != null) {
+      cartItem.quantity++;
+    } else {
+      _cart.add(CartItem(
+        food: food,
+        selectedAddons: selectedAddons,
+      ));
+    }
+    notifyListeners();
+  }
+
+  void removeFromCart(CartItem cartItem) {
+    int cartIndex = _cart.indexOf(cartItem);
+    if (cartIndex != -1) {
+      if (_cart[cartIndex].quantity > 1) {
+        _cart[cartIndex].quantity--;
+      } else {
+        _cart.removeAt(cartIndex);
+      }
+    }
+     notifyListeners();
+  }
+
+  double getTotalPrice() {
+    double total = 0.0;
+    for (CartItem cartItem in _cart) {
+      double itemTotal = cartItem.food.price;
+      for (Addon addon in cartItem.selectedAddons) {
+        itemTotal += addon.price;
+      }
+
+      total += itemTotal * cartItem.quantity;
+    }
+    return total;
+  }
+
+  int getTotalItemCount() {
+    int totalItemCount = 0;
+
+    for (CartItem cartItem in _cart) {
+      totalItemCount += cartItem.quantity;
+    }
+    return totalItemCount;
+    
+  }
+
+  void clearCart() {
+    _cart.clear();
+    notifyListeners();
+  }
 }

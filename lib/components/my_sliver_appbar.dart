@@ -24,7 +24,7 @@ class MySliverAppbar extends StatelessWidget {
           icon: const Icon(Icons.shopping_cart),
         )
       ],
-      title: title,
+      title: const Text('Sunset Diner'),
       flexibleSpace: FlexibleSpaceBar(
         background: Padding(
           padding: const EdgeInsets.only(bottom: 50.0),

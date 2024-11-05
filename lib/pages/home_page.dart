@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/my_current_location.dart';
 import 'package:food_delivery_app/components/my_description_box.dart';
 import 'package:food_delivery_app/components/my_drawer.dart';
+import 'package:food_delivery_app/components/my_food_tile.dart';
 import 'package:food_delivery_app/components/my_sliver_appbar.dart';
 import 'package:food_delivery_app/components/my_tab_bar.dart';
 import 'package:food_delivery_app/models/food.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
+import 'package:food_delivery_app/pages/food_page.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -44,10 +46,18 @@ class _HomePageState extends State<HomePage>
         return ListView.builder(
           itemCount: categoryMenu.length,
           physics: const NeverScrollableScrollPhysics(),
+          padding: EdgeInsets.zero,
           itemBuilder: (context, index) {
-            return ListTile(
-              title: Text(categoryMenu[index].name) ,
-            )
+            final food = categoryMenu[index];
+            return FoodTile(
+              food: food,
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => FoodPage(food: food),
+                ),
+              ),
+            );
           },
         );
       },
@@ -64,6 +74,7 @@ class _HomePageState extends State<HomePage>
                   title: MyTabBar(tabController: _tabController),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Divider(
                         indent: 25,
@@ -76,13 +87,14 @@ class _HomePageState extends State<HomePage>
                   ),
                 ),
               ],
-          body: Consumer<Restaurant>(builder: (context, restaurant, child) {
-            return TabBarView(
-            controller: _tabController, 
-            children: getFoodInThisCategory(restaurant.menu),
-            ),
-          },)
-            ),
+          body: Consumer<Restaurant>(
+            builder: (context, restaurant, child) {
+              return TabBarView(
+                controller: _tabController,
+                children: getFoodInThisCategory(restaurant.menu),
+              );
+            },
+          )),
     );
   }
 }
