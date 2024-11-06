@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/my_button.dart';
-import 'package:food_delivery_app/main.dart';
 import 'package:food_delivery_app/models/food.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:provider/provider.dart';
@@ -111,7 +110,7 @@ class _FoodPageState extends State<FoodPage> {
               ),
               MyButton(
                 onTap: () {
-                  Navigator.pop(context);
+                  addToCart(widget.food, widget.selectedAddons);
                 },
                 text: 'Add to cart',
               ),
