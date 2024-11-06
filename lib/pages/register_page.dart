@@ -23,7 +23,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
     if (passwordController.text == confirmPasswordController.text) {
       try {
-        await authService.signInWithEmailPassword(
+        await authService.signUpWithEmailPassword(
             emailController.text, passwordController.text);
       } catch (e) {
         showDialog(
@@ -35,11 +35,11 @@ class _RegisterPageState extends State<RegisterPage> {
       }
     } else {
       showDialog(
-          context: context,
-          builder: (context) => const AlertDialog(
-            title: Text("Passwords don't match!"),
-          ),
-        );
+        context: context,
+        builder: (context) => const AlertDialog(
+          title: Text("Passwords don't match!"),
+        ),
+      );
     }
   }
 
@@ -82,7 +82,11 @@ class _RegisterPageState extends State<RegisterPage> {
             obscureText: true,
           ),
           const SizedBox(height: 25),
-          MyButton(onTap: () {}, text: 'Sign up'),
+          MyButton(
+              onTap: () {
+                register();
+              },
+              text: 'Sign up'),
           const SizedBox(height: 25),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
