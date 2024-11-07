@@ -3,29 +3,41 @@ import 'package:food_delivery_app/components/my_button.dart';
 import 'package:food_delivery_app/components/my_textfield.dart';
 import 'package:food_delivery_app/services/auth/auth_service.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   final void Function()? onTap;
-  const LoginPage({super.key, required this.onTap});
+  const RegisterPage({super.key, required this.onTap});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
 
-  void login() async {
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
+
+  void register() async {
     final authService = AuthService();
 
-    try {
-      await authService.signInWithEmailPassword(
-          emailController.text, passwordController.text);
-    } catch (e) {
+    if (passwordController.text == confirmPasswordController.text) {
+      try {
+        await authService.signUpWithEmailPassword(
+            emailController.text, passwordController.text);
+      } catch (e) {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(e.toString()),
+          ),
+        );
+      }
+    } else {
       showDialog(
         context: context,
-        builder: (context) => AlertDialog(
-          title: Text(e.toString()),
+        builder: (context) => const AlertDialog(
+          title: Text("Passwords don't match!"),
         ),
       );
     }
@@ -45,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
           const SizedBox(height: 25),
           Text(
-            'Food Delivery App',
+            "Let's create an account for you",
             style: TextStyle(
               fontSize: 16,
               color: Theme.of(context).colorScheme.inversePrimary,
@@ -64,16 +76,23 @@ class _LoginPageState extends State<LoginPage> {
             obscureText: true,
           ),
           const SizedBox(height: 25),
-          MyButton(
-            onTap: login,
-            text: 'Sign In',
+          MyTextfield(
+            controller: confirmPasswordController,
+            hintText: 'Confirm Password',
+            obscureText: true,
           ),
+          const SizedBox(height: 25),
+          MyButton(
+              onTap: () {
+                register();
+              },
+              text: 'Sign up'),
           const SizedBox(height: 25),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Not a member?',
+                'Already have an account?',
                 style: TextStyle(
                     color: Theme.of(context).colorScheme.inversePrimary),
               ),
@@ -81,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
               GestureDetector(
                 onTap: widget.onTap,
                 child: Text(
-                  'Register now',
+                  'Login here!',
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.inversePrimary,
                     fontWeight: FontWeight.bold,
