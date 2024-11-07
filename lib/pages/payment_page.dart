@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterme_credit_card/flutterme_credit_card/field.dart';
 import 'package:flutterme_credit_card/flutterme_credit_card/utils/constants.dart';
 import 'package:flutterme_credit_card/flutterme_credit_card/widgets/card/credit_card.dart';
-import 'package:food_delivery_app/components/my_button.dart';
+import 'package:food_delivery_app/components/universal_custom_button.dart';
 import 'package:food_delivery_app/pages/delivery_progress_page.dart';
 
 class PaymentPage extends StatefulWidget {

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/components/my_current_location.dart';
-import 'package:food_delivery_app/components/my_description_box.dart';
-import 'package:food_delivery_app/components/my_drawer.dart';
-import 'package:food_delivery_app/components/my_food_tile.dart';
-import 'package:food_delivery_app/components/my_sliver_appbar.dart';
-import 'package:food_delivery_app/components/my_tab_bar.dart';
+import 'package:food_delivery_app/components/appbar_current_location.dart';
+import 'package:food_delivery_app/components/appbar_description_box.dart';
+import 'package:food_delivery_app/components/homepage_drawer.dart';
+import 'package:food_delivery_app/components/food_tile.dart';
+import 'package:food_delivery_app/components/homepage_sliver_appbar.dart';
+import 'package:food_delivery_app/components/category_tab_bar.dart';
 import 'package:food_delivery_app/models/food.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:food_delivery_app/pages/food_page.dart';

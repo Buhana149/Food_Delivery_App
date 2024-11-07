@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/components/my_button.dart';
-import 'package:food_delivery_app/components/my_textfield.dart';
+import 'package:food_delivery_app/components/universal_custom_button.dart';
+import 'package:food_delivery_app/components/universal_custom_textfield.dart';
 import 'package:food_delivery_app/services/auth/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
