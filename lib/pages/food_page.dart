@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/universal_custom_button.dart';
+import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/models/food.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:provider/provider.dart';
@@ -20,7 +21,9 @@ class FoodPage extends StatefulWidget {
 class _FoodPageState extends State<FoodPage> {
   void addToCart(Food food, Map<Addon, bool> selectedAddons) {
     Navigator.pop(context);
+
     List<Addon> curentlySelectedAddons = [];
+
     for (Addon addon in widget.food.availableAddons) {
       if (widget.selectedAddons[addon] == true) {
         curentlySelectedAddons.add(addon);
@@ -54,22 +57,18 @@ class _FoodPageState extends State<FoodPage> {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
-                        color: Theme.of(context).colorScheme.primary,
+                        color: getPrimaryColor(context),
                       ),
                     ),
                     const SizedBox(height: 10),
-                    Text(
-                      widget.food.description,
-                    ),
+                    Text(widget.food.description),
                     const SizedBox(height: 20),
-                    Divider(
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
+                    Divider(color: getSecondatyColor(context)),
                     const SizedBox(height: 10),
                     Text(
                       'Add-ons',
                       style: TextStyle(
-                        color: Theme.of(context).colorScheme.inversePrimary,
+                        color: getInverseColor(context),
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
@@ -77,8 +76,7 @@ class _FoodPageState extends State<FoodPage> {
                     const SizedBox(height: 10),
                     Container(
                       decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Theme.of(context).colorScheme.secondary),
+                        border: Border.all(color: getSecondatyColor(context)),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: ListView.builder(
@@ -93,7 +91,7 @@ class _FoodPageState extends State<FoodPage> {
                             subtitle: Text(
                               '\$${addon.price}',
                               style: TextStyle(
-                                  color: Theme.of(context).colorScheme.primary),
+                                  color: getPrimaryColor(context)),
                             ),
                             value: widget.selectedAddons[addon],
                             onChanged: (bool? value) {
@@ -125,7 +123,7 @@ class _FoodPageState extends State<FoodPage> {
           child: Container(
             margin: const EdgeInsets.only(left: 25),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.secondary,
+              color: getSecondatyColor(context),
               shape: BoxShape.circle,
             ),
             child: IconButton(

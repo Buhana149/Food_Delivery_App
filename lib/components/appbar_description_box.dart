@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/constants/colors.dart';
 
 class MyDescriptionBox extends StatelessWidget {
   const MyDescriptionBox({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var myPrimaryTextStyle =
-        TextStyle(color: Theme.of(context).colorScheme.inversePrimary);
-    var mySecondaeyTextStyle =
-        TextStyle(color: Theme.of(context).colorScheme.primary);
-
     return Container(
       decoration: BoxDecoration(
         border: Border.all(color: Theme.of(context).colorScheme.secondary),
@@ -24,11 +20,15 @@ class MyDescriptionBox extends StatelessWidget {
             children: [
               Text(
                 '\$0.99',
-                style: myPrimaryTextStyle,
+                style: TextStyle(
+                  color: getInverseColor(context),
+                ),
               ),
               Text(
                 'Delivery fee',
-                style: mySecondaeyTextStyle,
+                style: TextStyle(
+                  color: getSecondatyColor(context),
+                ),
               )
             ],
           ),
@@ -36,11 +36,15 @@ class MyDescriptionBox extends StatelessWidget {
             children: [
               Text(
                 '15-30 min',
-                style: myPrimaryTextStyle,
+                style: TextStyle(
+                  color: getPrimaryColor(context),
+                ),
               ),
               Text(
                 'Delivery time',
-                style: mySecondaeyTextStyle,
+                style: TextStyle(
+                  color: getSecondatyColor(context),
+                ),
               )
             ],
           )

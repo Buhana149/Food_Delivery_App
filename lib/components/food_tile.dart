@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/models/food.dart';
 
 class FoodTile extends StatelessWidget {
   final Food food;
   final void Function()? onTap;
-  const FoodTile({super.key, required this.food, required this.onTap});
+  const FoodTile({
+    super.key,
+    required this.food,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,20 +28,19 @@ class FoodTile extends StatelessWidget {
                       Text(food.name),
                       Text(
                         '\$${food.price}',
-                        style: TextStyle(
-                            color: Theme.of(context).colorScheme.primary),
+                        style: TextStyle(color: getPrimaryColor(context)),
                       ),
                       const SizedBox(height: 10),
                       Text(
                         food.description,
                         style: TextStyle(
-                            color:
-                                Theme.of(context).colorScheme.inversePrimary),
+                          color: getInverseColor(context),
+                        ),
                       ),
                     ],
                   ),
                 ),
-                const SizedBox(width: 15,),
+                const SizedBox(width: 15),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(8),
                   child: Image.asset(
@@ -50,7 +54,7 @@ class FoodTile extends StatelessWidget {
           ),
         ),
         Divider(
-          color: Theme.of(context).colorScheme.tertiary,
+          color: getTertiaryColor(context),
           endIndent: 25,
           indent: 25,
         )

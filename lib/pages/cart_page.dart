@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/universal_custom_button.dart';
 import 'package:food_delivery_app/components/cart_tile.dart';
+import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:food_delivery_app/pages/payment_page.dart';
 import 'package:provider/provider.dart';
@@ -17,8 +18,8 @@ class CartPage extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             title: const Text('Cart'),
-            backgroundColor: Colors.transparent,
-            foregroundColor: Theme.of(context).colorScheme.inversePrimary,
+            backgroundColor: transparent,
+            foregroundColor: getInverseColor(context),
             actions: [
               IconButton(
                 onPressed: () {
@@ -56,7 +57,10 @@ class CartPage extends StatelessWidget {
                   children: [
                     userCart.isEmpty
                         ? const Center(
-                            child: Center(child: Text('Cart is empty..')))
+                            child: Center(
+                              child: Text('Cart is empty..'),
+                            ),
+                          )
                         : Expanded(
                             child: ListView.builder(
                                 itemCount: userCart.length,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/pages/cart_page.dart';
 
 class MySliverAppbar extends StatelessWidget {
@@ -13,8 +14,8 @@ class MySliverAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: Theme.of(context).colorScheme.surface,
-      foregroundColor: Theme.of(context).colorScheme.inversePrimary,
+      backgroundColor: getSurfaceColor(context),
+      foregroundColor: getInverseColor(context),
       expandedHeight: 340,
       collapsedHeight: 120,
       floating: false,
@@ -23,10 +24,11 @@ class MySliverAppbar extends StatelessWidget {
         IconButton(
           onPressed: () {
             Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const CartPage(),
-                ));
+              context,
+              MaterialPageRoute(
+                builder: (context) => const CartPage(),
+              ),
+            );
           },
           icon: const Icon(Icons.shopping_cart),
         )
@@ -39,7 +41,11 @@ class MySliverAppbar extends StatelessWidget {
         ),
         title: title,
         centerTitle: true,
-        titlePadding: const EdgeInsets.only(left: 0, right: 0, top: 0),
+        titlePadding: const EdgeInsets.only(
+          left: 0,
+          right: 0,
+          top: 0,
+        ),
         expandedTitleScale: 1,
       ),
     );

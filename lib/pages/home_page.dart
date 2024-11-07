@@ -5,6 +5,7 @@ import 'package:food_delivery_app/components/homepage_drawer.dart';
 import 'package:food_delivery_app/components/food_tile.dart';
 import 'package:food_delivery_app/components/homepage_sliver_appbar.dart';
 import 'package:food_delivery_app/components/category_tab_bar.dart';
+import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/models/food.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:food_delivery_app/pages/food_page.dart';
@@ -69,32 +70,33 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       drawer: const MyDrawer(),
       body: NestedScrollView(
-          headerSliverBuilder: (context, innerBoxIsScrolled) => [
-                MySliverAppbar(
-                  title: MyTabBar(tabController: _tabController),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Divider(
-                        indent: 25,
-                        endIndent: 25,
-                        color: Theme.of(context).colorScheme.secondary,
-                      ),
-                      const MyCurrentLocation(),
-                      const MyDescriptionBox(),
-                    ],
-                  ),
+        headerSliverBuilder: (context, innerBoxIsScrolled) => [
+          MySliverAppbar(
+            title: MyTabBar(tabController: _tabController),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Divider(
+                  indent: 25,
+                  endIndent: 25,
+                  color: getSecondatyColor(context),
                 ),
+                const MyCurrentLocation(),
+                const MyDescriptionBox(),
               ],
-          body: Consumer<Restaurant>(
-            builder: (context, restaurant, child) {
-              return TabBarView(
-                controller: _tabController,
-                children: getFoodInThisCategory(restaurant.menu),
-              );
-            },
-          )),
+            ),
+          ),
+        ],
+        body: Consumer<Restaurant>(
+          builder: (context, restaurant, child) {
+            return TabBarView(
+              controller: _tabController,
+              children: getFoodInThisCategory(restaurant.menu),
+            );
+          },
+        ),
+      ),
     );
   }
 }

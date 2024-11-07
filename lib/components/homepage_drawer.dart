@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/homepage_drawer_tile.dart';
+import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/pages/settings_page.dart';
 import 'package:food_delivery_app/services/auth/auth_service.dart';
 
@@ -14,7 +15,7 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Theme.of(context).colorScheme.surface,
+      backgroundColor: getSurfaceColor(context),
       child: Column(
         children: [
           Padding(
@@ -22,13 +23,13 @@ class MyDrawer extends StatelessWidget {
             child: Icon(
               Icons.lock_open_rounded,
               size: 80,
-              color: Theme.of(context).colorScheme.inversePrimary,
+              color: getInverseColor(context),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(25.0),
             child: Divider(
-              color: Theme.of(context).colorScheme.secondary,
+              color: getSecondatyColor(context),
             ),
           ),
           MyDrawerTile(
@@ -52,9 +53,7 @@ class MyDrawer extends StatelessWidget {
           MyDrawerTile(
             text: 'L O G  O U T',
             icon: Icons.logout,
-            onTap: () {
-              logout();
-            },
+            onTap: () => logout(),
           ),
           const SizedBox(height: 25),
         ],

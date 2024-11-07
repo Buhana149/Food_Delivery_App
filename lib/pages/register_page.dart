@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/universal_custom_button.dart';
 import 'package:food_delivery_app/components/universal_custom_textfield.dart';
+import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/services/auth/auth_service.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -13,7 +14,6 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController emailController = TextEditingController();
-
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
       TextEditingController();
@@ -36,8 +36,14 @@ class _RegisterPageState extends State<RegisterPage> {
     } else {
       showDialog(
         context: context,
-        builder: (context) => const AlertDialog(
+        builder: (context) => AlertDialog(
           title: Text("Passwords don't match!"),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('OK'),
+            )
+          ],
         ),
       );
     }
@@ -46,21 +52,21 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
+      backgroundColor: getSurfaceColor(context),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
             Icons.lock_open_rounded,
             size: 100,
-            color: Theme.of(context).colorScheme.inversePrimary,
+            color: getInverseColor(context),
           ),
           const SizedBox(height: 25),
           Text(
             "Let's create an account for you",
             style: TextStyle(
               fontSize: 16,
-              color: Theme.of(context).colorScheme.inversePrimary,
+              color: getInverseColor(context),
             ),
           ),
           const SizedBox(height: 25),
@@ -83,10 +89,9 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
           const SizedBox(height: 25),
           MyButton(
-              onTap: () {
-                register();
-              },
-              text: 'Sign up'),
+            onTap: () => register(),
+            text: 'Sign up',
+          ),
           const SizedBox(height: 25),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -94,7 +99,8 @@ class _RegisterPageState extends State<RegisterPage> {
               Text(
                 'Already have an account?',
                 style: TextStyle(
-                    color: Theme.of(context).colorScheme.inversePrimary),
+                  color: getInverseColor(context),
+                ),
               ),
               const SizedBox(width: 4),
               GestureDetector(
@@ -102,7 +108,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: Text(
                   'Login here!',
                   style: TextStyle(
-                    color: Theme.of(context).colorScheme.inversePrimary,
+                    color: getInverseColor(context),
                     fontWeight: FontWeight.bold,
                   ),
                 ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/universal_custom_button.dart';
 import 'package:food_delivery_app/components/universal_custom_textfield.dart';
+import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/services/auth/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
@@ -20,7 +21,9 @@ class _LoginPageState extends State<LoginPage> {
 
     try {
       await authService.signInWithEmailPassword(
-          emailController.text, passwordController.text);
+        emailController.text,
+        passwordController.text,
+      );
     } catch (e) {
       showDialog(
         context: context,
@@ -34,21 +37,21 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
+      backgroundColor: getSurfaceColor(context),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
             Icons.lock_open_rounded,
             size: 100,
-            color: Theme.of(context).colorScheme.inversePrimary,
+            color: getInverseColor(context),
           ),
           const SizedBox(height: 25),
           Text(
             'Food Delivery App',
             style: TextStyle(
               fontSize: 16,
-              color: Theme.of(context).colorScheme.inversePrimary,
+              color: getInverseColor(context),
             ),
           ),
           const SizedBox(height: 25),
@@ -74,8 +77,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Text(
                 'Not a member?',
-                style: TextStyle(
-                    color: Theme.of(context).colorScheme.inversePrimary),
+                style: TextStyle(color: getInverseColor(context)),
               ),
               const SizedBox(width: 4),
               GestureDetector(
@@ -83,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Text(
                   'Register now',
                   style: TextStyle(
-                    color: Theme.of(context).colorScheme.inversePrimary,
+                    color: getInverseColor(context),
                     fontWeight: FontWeight.bold,
                   ),
                 ),

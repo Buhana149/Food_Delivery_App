@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/constants/colors.dart';
 
 class MyTextfield extends StatelessWidget {
   final TextEditingController controller;
@@ -21,17 +22,17 @@ class MyTextfield extends StatelessWidget {
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Theme.of(context).colorScheme.tertiary,
+              color: getTertiaryColor(context),
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Theme.of(context).colorScheme.primary,
+              color: getPrimaryColor(context),
             ),
           ),
           hintText: hintText,
           hintStyle: TextStyle(
-            color: Theme.of(context).colorScheme.primary
+            color: getPrimaryColor(context),
           ),
         ),
       ),

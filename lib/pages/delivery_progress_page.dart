@@ -26,7 +26,7 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: transparent,
       ),
       bottomNavigationBar: _buildBottomNavigationBar(context),
       body: const Column(
@@ -41,7 +41,7 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
     return Container(
       height: 100,
       decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.secondary,
+          color: getSecondatyColor(context),
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(40),
             topRight: Radius.circular(40),
@@ -51,7 +51,7 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.surface,
+              color: getSurfaceColor(context),
               shape: BoxShape.circle,
             ),
             child: IconButton(
@@ -69,12 +69,14 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
-                  color: Theme.of(context).colorScheme.inversePrimary,
+                  color: getInverseColor(context),
                 ),
               ),
               Text(
                 'Driver',
-                style: getPrimaryColor(context),
+                style: TextStyle(
+                  color: getPrimaryColor(context),
+                ),
               ),
             ],
           ),
@@ -83,27 +85,27 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
             children: [
               Container(
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surface,
+                  color: getSurfaceColor(context),
                   shape: BoxShape.circle,
                 ),
                 child: IconButton(
                     onPressed: () {},
                     icon: Icon(
                       Icons.message,
-                      color: Theme.of(context).colorScheme.primary,
+                      color: getPrimaryColor(context),
                     )),
               ),
               SizedBox(width: 10),
               Container(
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surface,
+                  color: getSurfaceColor(context),
                   shape: BoxShape.circle,
                 ),
                 child: IconButton(
                     onPressed: () {},
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.call,
-                      color: Colors.green,
+                      color: green,
                     )),
               ),
             ],
