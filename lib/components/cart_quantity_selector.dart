@@ -19,8 +19,7 @@ class QuantitySelector extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: getSurfaceColor(context),
-          borderRadius: BorderRadius.circular(50)),
+          color: context.surfaceColor, borderRadius: BorderRadius.circular(50)),
       padding: const EdgeInsets.all(8),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -30,7 +29,7 @@ class QuantitySelector extends StatelessWidget {
             child: Icon(
               Icons.remove,
               size: 20,
-              color: getPrimaryColor(context),
+              color: context.primaryColor,
             ),
           ),
           Padding(
@@ -47,7 +46,7 @@ class QuantitySelector extends StatelessWidget {
             child: Icon(
               Icons.add,
               size: 20,
-              color: getPrimaryColor(context),
+              color: context.primaryColor,
             ),
           )
         ],

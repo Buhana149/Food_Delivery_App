@@ -24,7 +24,7 @@ class MyReceipt extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: getSecondatyColor(context),
+                  color: context.secondaryColor,
                 ),
                 borderRadius: BorderRadius.circular(8),
               ),

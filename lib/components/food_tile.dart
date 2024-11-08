@@ -28,13 +28,13 @@ class FoodTile extends StatelessWidget {
                       Text(food.name),
                       Text(
                         '\$${food.price}',
-                        style: TextStyle(color: getPrimaryColor(context)),
+                        style: TextStyle(color: context.primaryColor),
                       ),
                       const SizedBox(height: 10),
                       Text(
                         food.description,
                         style: TextStyle(
-                          color: getInverseColor(context),
+                          color: context.inversePrimaryColor,
                         ),
                       ),
                     ],
@@ -54,7 +54,7 @@ class FoodTile extends StatelessWidget {
           ),
         ),
         Divider(
-          color: getTertiaryColor(context),
+          color: context.tertiaryColor,
           endIndent: 25,
           indent: 25,
         )

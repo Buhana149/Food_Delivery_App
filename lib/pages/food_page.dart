@@ -57,18 +57,18 @@ class _FoodPageState extends State<FoodPage> {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
-                        color: getPrimaryColor(context),
+                        color: context.primaryColor,
                       ),
                     ),
                     const SizedBox(height: 10),
                     Text(widget.food.description),
                     const SizedBox(height: 20),
-                    Divider(color: getSecondatyColor(context)),
+                    Divider(color: context.secondaryColor),
                     const SizedBox(height: 10),
                     Text(
                       'Add-ons',
                       style: TextStyle(
-                        color: getInverseColor(context),
+                        color: context.inversePrimaryColor,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
@@ -76,7 +76,7 @@ class _FoodPageState extends State<FoodPage> {
                     const SizedBox(height: 10),
                     Container(
                       decoration: BoxDecoration(
-                        border: Border.all(color: getSecondatyColor(context)),
+                        border: Border.all(color: context.secondaryColor),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: ListView.builder(
@@ -90,8 +90,7 @@ class _FoodPageState extends State<FoodPage> {
                             title: Text(addon.name),
                             subtitle: Text(
                               '\$${addon.price}',
-                              style: TextStyle(
-                                  color: getPrimaryColor(context)),
+                              style: TextStyle(color: context.primaryColor),
                             ),
                             value: widget.selectedAddons[addon],
                             onChanged: (bool? value) {
@@ -123,7 +122,7 @@ class _FoodPageState extends State<FoodPage> {
           child: Container(
             margin: const EdgeInsets.only(left: 25),
             decoration: BoxDecoration(
-              color: getSecondatyColor(context),
+              color: context.secondaryColor,
               shape: BoxShape.circle,
             ),
             child: IconButton(

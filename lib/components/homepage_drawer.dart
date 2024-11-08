@@ -15,7 +15,7 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: getSurfaceColor(context),
+      backgroundColor: context.surfaceColor,
       child: Column(
         children: [
           Padding(
@@ -23,13 +23,13 @@ class MyDrawer extends StatelessWidget {
             child: Icon(
               Icons.lock_open_rounded,
               size: 80,
-              color: getInverseColor(context),
+              color: context.inversePrimaryColor,
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(25.0),
             child: Divider(
-              color: getSecondatyColor(context),
+              color: context.secondaryColor,
             ),
           ),
           MyDrawerTile(

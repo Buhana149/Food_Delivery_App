@@ -45,7 +45,7 @@ class MyCurrentLocation extends StatelessWidget {
           Text(
             'Deliver Now',
             style: TextStyle(
-              color: getPrimaryColor(context),
+              color: context.primaryColor,
             ),
           ),
           GestureDetector(
@@ -56,7 +56,7 @@ class MyCurrentLocation extends StatelessWidget {
                   builder: (context, restaurant, child) => Text(
                     restaurant.deliveryAddress,
                     style: TextStyle(
-                      color: getInverseColor(context),
+                      color: context.inversePrimaryColor,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

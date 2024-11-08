@@ -14,8 +14,8 @@ class MySliverAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: getSurfaceColor(context),
-      foregroundColor: getInverseColor(context),
+      backgroundColor: context.surfaceColor,
+      foregroundColor: context.inversePrimaryColor,
       expandedHeight: 340,
       collapsedHeight: 120,
       floating: false,

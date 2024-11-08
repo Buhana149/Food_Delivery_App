@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage>
                 Divider(
                   indent: 25,
                   endIndent: 25,
-                  color: getSecondatyColor(context),
+                  color: context.secondaryColor,
                 ),
                 const MyCurrentLocation(),
                 const MyDescriptionBox(),

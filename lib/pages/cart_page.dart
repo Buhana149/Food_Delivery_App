@@ -19,7 +19,7 @@ class CartPage extends StatelessWidget {
           appBar: AppBar(
             title: const Text('Cart'),
             backgroundColor: transparent,
-            foregroundColor: getInverseColor(context),
+            foregroundColor: context.inversePrimaryColor,
             actions: [
               IconButton(
                 onPressed: () {

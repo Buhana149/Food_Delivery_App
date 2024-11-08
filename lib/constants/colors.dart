@@ -1,25 +1,12 @@
 import 'package:flutter/material.dart';
 
-Color getPrimaryColor(BuildContext context) {
-  return Theme.of(context).colorScheme.primary;
+extension ThemeColorExtension on BuildContext {
+  Color get primaryColor => Theme.of(this).colorScheme.primary;
+  Color get secondaryColor => Theme.of(this).colorScheme.secondary;
+  Color get surfaceColor => Theme.of(this).colorScheme.surface;
+  Color get inversePrimaryColor => Theme.of(this).colorScheme.inversePrimary;
+  Color get tertiaryColor => Theme.of(this).colorScheme.tertiary;
 }
-
-Color getSecondatyColor(BuildContext context) {
-  return Theme.of(context).colorScheme.secondary;
-}
-
-Color getSurfaceColor(BuildContext context) {
-  return Theme.of(context).colorScheme.surface;
-}
-
-Color getInverseColor(BuildContext context) {
-  return Theme.of(context).colorScheme.inversePrimary;
-}
-Color getTertiaryColor(BuildContext context) {
-  return Theme.of(context).colorScheme.tertiary;
-}
-
-
 
 Color? transparent = Colors.transparent;
 Color? green = Colors.green;

@@ -52,21 +52,21 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: getSurfaceColor(context),
+      backgroundColor: context.surfaceColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
             Icons.lock_open_rounded,
             size: 100,
-            color: getInverseColor(context),
+            color: context.inversePrimaryColor,
           ),
           const SizedBox(height: 25),
           Text(
             "Let's create an account for you",
             style: TextStyle(
               fontSize: 16,
-              color: getInverseColor(context),
+              color: context.inversePrimaryColor,
             ),
           ),
           const SizedBox(height: 25),
@@ -99,7 +99,7 @@ class _RegisterPageState extends State<RegisterPage> {
               Text(
                 'Already have an account?',
                 style: TextStyle(
-                  color: getInverseColor(context),
+                  color: context.inversePrimaryColor,
                 ),
               ),
               const SizedBox(width: 4),
@@ -108,7 +108,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: Text(
                   'Login here!',
                   style: TextStyle(
-                    color: getInverseColor(context),
+                    color: context.inversePrimaryColor,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

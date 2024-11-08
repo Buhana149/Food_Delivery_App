@@ -60,10 +60,10 @@ class _PaymentPageState extends State<PaymentPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: getSurfaceColor(context),
+      backgroundColor: context.surfaceColor,
       appBar: AppBar(
         backgroundColor: transparent,
-        foregroundColor: getInverseColor(context),
+        foregroundColor: context.inversePrimaryColor,
         title: const Text('Checkout'),
       ),
       body: Column(

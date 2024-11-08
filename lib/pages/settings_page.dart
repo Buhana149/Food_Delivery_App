@@ -10,16 +10,16 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: getSurfaceColor(context),
+      backgroundColor: context.surfaceColor,
       appBar: AppBar(
         title: Text('Settings'),
-        backgroundColor: getSurfaceColor(context),
+        backgroundColor: context.surfaceColor,
       ),
       body: Column(
         children: [
           Container(
             decoration: BoxDecoration(
-              color: getSecondatyColor(context),
+              color: context.secondaryColor,
               borderRadius: BorderRadius.circular(12),
             ),
             margin: const EdgeInsets.only(
@@ -35,7 +35,7 @@ class SettingsPage extends StatelessWidget {
                   'Dark Mode',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: getInverseColor(context),
+                    color: context.inversePrimaryColor,
                   ),
                 ),
                 CupertinoSwitch(

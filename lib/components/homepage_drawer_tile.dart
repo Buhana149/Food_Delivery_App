@@ -20,12 +20,12 @@ class MyDrawerTile extends StatelessWidget {
         title: Text(
           text,
           style: TextStyle(
-            color: getPrimaryColor(context),
+            color: context.primaryColor,
           ),
         ),
         leading: Icon(
           icon,
-          color: getInverseColor(context),
+          color: context.inversePrimaryColor,
         ),
         onTap: onTap,
       ),

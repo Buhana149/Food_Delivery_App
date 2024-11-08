@@ -37,21 +37,21 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: getSurfaceColor(context),
+      backgroundColor: context.surfaceColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
             Icons.lock_open_rounded,
             size: 100,
-            color: getInverseColor(context),
+            color: context.inversePrimaryColor,
           ),
           const SizedBox(height: 25),
           Text(
             'Food Delivery App',
             style: TextStyle(
               fontSize: 16,
-              color: getInverseColor(context),
+              color: context.inversePrimaryColor,
             ),
           ),
           const SizedBox(height: 25),
@@ -77,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Text(
                 'Not a member?',
-                style: TextStyle(color: getInverseColor(context)),
+                style: TextStyle(color: context.inversePrimaryColor),
               ),
               const SizedBox(width: 4),
               GestureDetector(
@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Text(
                   'Register now',
                   style: TextStyle(
-                    color: getInverseColor(context),
+                    color: context.inversePrimaryColor,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

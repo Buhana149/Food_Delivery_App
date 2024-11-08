@@ -41,7 +41,7 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
     return Container(
       height: 100,
       decoration: BoxDecoration(
-          color: getSecondatyColor(context),
+          color: context.secondaryColor,
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(40),
             topRight: Radius.circular(40),
@@ -51,7 +51,7 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: getSurfaceColor(context),
+              color: context.surfaceColor,
               shape: BoxShape.circle,
             ),
             child: IconButton(
@@ -69,13 +69,13 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
-                  color: getInverseColor(context),
+                  color: context.inversePrimaryColor,
                 ),
               ),
               Text(
                 'Driver',
                 style: TextStyle(
-                  color: getPrimaryColor(context),
+                  color: context.primaryColor,
                 ),
               ),
             ],
@@ -85,20 +85,20 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
             children: [
               Container(
                 decoration: BoxDecoration(
-                  color: getSurfaceColor(context),
+                  color: context.surfaceColor,
                   shape: BoxShape.circle,
                 ),
                 child: IconButton(
                     onPressed: () {},
                     icon: Icon(
                       Icons.message,
-                      color: getPrimaryColor(context),
+                      color: context.primaryColor,
                     )),
               ),
               SizedBox(width: 10),
               Container(
                 decoration: BoxDecoration(
-                  color: getSurfaceColor(context),
+                  color: context.surfaceColor,
                   shape: BoxShape.circle,
                 ),
                 child: IconButton(

@@ -17,7 +17,7 @@ class MyCartTile extends StatelessWidget {
     return Consumer<Restaurant>(
       builder: (context, restaurant, child) => Container(
         decoration: BoxDecoration(
-            color: getSecondatyColor(context),
+            color: context.secondaryColor,
             borderRadius: BorderRadius.circular(8)),
         margin: const EdgeInsets.symmetric(
           horizontal: 25,
@@ -46,7 +46,7 @@ class MyCartTile extends StatelessWidget {
                       Text(
                         '\$${cartItem.food.price}',
                         style: TextStyle(
-                          color: getPrimaryColor(context),
+                          color: context.primaryColor,
                         ),
                       ),
                       const SizedBox(height: 10),
@@ -86,12 +86,11 @@ class MyCartTile extends StatelessWidget {
                               ],
                             ),
                             shape: StadiumBorder(
-                                side: BorderSide(
-                                    color: getPrimaryColor(context))),
+                                side: BorderSide(color: context.primaryColor)),
                             onSelected: (value) {},
-                            backgroundColor: getSecondatyColor(context),
+                            backgroundColor: context.secondaryColor,
                             labelStyle: TextStyle(
-                              color: getInverseColor(context),
+                              color: context.inversePrimaryColor,
                               fontSize: 12,
                             ),
                           ),

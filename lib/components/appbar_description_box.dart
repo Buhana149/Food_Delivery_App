@@ -21,13 +21,13 @@ class MyDescriptionBox extends StatelessWidget {
               Text(
                 '\$0.99',
                 style: TextStyle(
-                  color: getInverseColor(context),
+                  color: context.inversePrimaryColor,
                 ),
               ),
               Text(
                 'Delivery fee',
                 style: TextStyle(
-                  color: getSecondatyColor(context),
+                  color: context.secondaryColor,
                 ),
               )
             ],
@@ -37,13 +37,13 @@ class MyDescriptionBox extends StatelessWidget {
               Text(
                 '15-30 min',
                 style: TextStyle(
-                  color: getPrimaryColor(context),
+                  color: context.primaryColor,
                 ),
               ),
               Text(
                 'Delivery time',
                 style: TextStyle(
-                  color: getSecondatyColor(context),
+                  color: context.secondaryColor,
                 ),
               )
             ],
