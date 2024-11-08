@@ -1,0 +1,17 @@
+const double zeroNumber = 0;
+const double extraXSmall = 4;
+const double xSmall = 8;
+const double small = 10;
+const double smallSecond = 12;
+const double medium = 15;
+const double mediumSecond = 16;
+const double large = 20;
+const double largeSecond = 25;
+const double largeThird = 30;
+const double largeFourth = 40;
+const double largeFifth = 50;
+const double largeSixth = 60;
+const double largeSeventh = 80;
+const double xLarge = 100;
+const double xLargeSecond = 120;
+const double xXLarge = 340;

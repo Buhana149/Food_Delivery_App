@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/colors.dart';
+import 'package:food_delivery_app/constants/numer_sizes.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:provider/provider.dart';
 
@@ -38,7 +39,7 @@ class MyCurrentLocation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(25.0),
+      padding: const EdgeInsets.all(largeSecond),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

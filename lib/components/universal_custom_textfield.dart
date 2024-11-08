@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/colors.dart';
+import 'package:food_delivery_app/constants/numer_sizes.dart';
 
 class MyTextfield extends StatelessWidget {
   final TextEditingController controller;
@@ -15,7 +16,7 @@ class MyTextfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+      padding: const EdgeInsets.symmetric(horizontal: largeSecond),
       child: TextField(
         controller: controller,
         obscureText: obscureText,

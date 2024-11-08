@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/universal_custom_button.dart';
 import 'package:food_delivery_app/components/universal_custom_textfield.dart';
 import 'package:food_delivery_app/constants/colors.dart';
+import 'package:food_delivery_app/constants/numer_sizes.dart';
 import 'package:food_delivery_app/services/auth/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
@@ -43,35 +44,35 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           Icon(
             Icons.lock_open_rounded,
-            size: 100,
+            size: xLarge,
             color: context.inversePrimaryColor,
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: largeSecond),
           Text(
             'Food Delivery App',
             style: TextStyle(
-              fontSize: 16,
+              fontSize: mediumSecond,
               color: context.inversePrimaryColor,
             ),
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: largeSecond),
           MyTextfield(
             controller: emailController,
             hintText: 'Email',
             obscureText: false,
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: largeSecond),
           MyTextfield(
             controller: passwordController,
             hintText: 'Password',
             obscureText: true,
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: largeSecond),
           MyButton(
             onTap: login,
             text: 'Sign In',
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: largeSecond),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -79,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                 'Not a member?',
                 style: TextStyle(color: context.inversePrimaryColor),
               ),
-              const SizedBox(width: 4),
+              const SizedBox(width: extraXSmall),
               GestureDetector(
                 onTap: widget.onTap,
                 child: Text(

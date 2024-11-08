@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/colors.dart';
+import 'package:food_delivery_app/constants/numer_sizes.dart';
 import 'package:food_delivery_app/models/food.dart';
 
 class FoodTile extends StatelessWidget {
@@ -18,7 +19,7 @@ class FoodTile extends StatelessWidget {
         GestureDetector(
           onTap: onTap,
           child: Padding(
-            padding: const EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(medium),
             child: Row(
               children: [
                 Expanded(
@@ -30,7 +31,7 @@ class FoodTile extends StatelessWidget {
                         '\$${food.price}',
                         style: TextStyle(color: context.primaryColor),
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: small),
                       Text(
                         food.description,
                         style: TextStyle(
@@ -40,13 +41,13 @@ class FoodTile extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(width: 15),
+                const SizedBox(width: medium),
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(xSmall),
                   child: Image.asset(
                     food.imagePath,
-                    height: 120,
-                    width: 120,
+                    height: xLargeSecond,
+                    width: xLargeSecond,
                   ),
                 ),
               ],
@@ -55,8 +56,8 @@ class FoodTile extends StatelessWidget {
         ),
         Divider(
           color: context.tertiaryColor,
-          endIndent: 25,
-          indent: 25,
+          endIndent: largeSecond,
+          indent: largeSecond,
         )
       ],
     );

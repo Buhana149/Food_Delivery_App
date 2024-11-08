@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/colors.dart';
+import 'package:food_delivery_app/constants/numer_sizes.dart';
 
 class MyButton extends StatelessWidget {
   final Function()? onTap;
@@ -16,11 +17,11 @@ class MyButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(25),
-        margin: const EdgeInsets.symmetric(horizontal: 25),
+        padding: const EdgeInsets.all(largeSecond),
+        margin: const EdgeInsets.symmetric(horizontal: largeSecond),
         decoration: BoxDecoration(
           color: context.secondaryColor,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(xSmall),
         ),
         child: Center(
           child: Text(
@@ -28,7 +29,7 @@ class MyButton extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               color: context.inversePrimaryColor,
-              fontSize: 16,
+              fontSize: mediumSecond,
             ),
           ),
         ),

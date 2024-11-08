@@ -4,6 +4,7 @@ import 'package:flutterme_credit_card/flutterme_credit_card/utils/constants.dart
 import 'package:flutterme_credit_card/flutterme_credit_card/widgets/card/credit_card.dart';
 import 'package:food_delivery_app/components/universal_custom_button.dart';
 import 'package:food_delivery_app/constants/colors.dart';
+import 'package:food_delivery_app/constants/numer_sizes.dart';
 import 'package:food_delivery_app/pages/delivery_progress_page.dart';
 
 class PaymentPage extends StatefulWidget {
@@ -79,7 +80,7 @@ class _PaymentPageState extends State<PaymentPage> {
             holder: cardHolderName.text,
           ),
           Padding(
-            padding: const EdgeInsets.all(25.0),
+            padding: const EdgeInsets.all(largeSecond),
             child: Form(
               key: formKey,
               child: Column(
@@ -92,7 +93,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       hintText: "John Doe",
                     ),
                   ),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: largeThird),
                   FMNumberField(
                     controller: cardNumber,
                     cursorColor: turqoise,
@@ -101,7 +102,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       hintText: "0000 0000 0000 0000",
                     ),
                   ),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: largeThird),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -124,7 +125,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 10),
+                      const SizedBox(width: small),
                       Flexible(
                         child: FMCvvField(
                           controller: cvvCode,
@@ -146,7 +147,7 @@ class _PaymentPageState extends State<PaymentPage> {
             onTap: userTappedPay,
             text: 'Pay now',
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: largeSecond),
         ],
       ),
     );

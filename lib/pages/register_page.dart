@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/universal_custom_button.dart';
 import 'package:food_delivery_app/components/universal_custom_textfield.dart';
 import 'package:food_delivery_app/constants/colors.dart';
+import 'package:food_delivery_app/constants/numer_sizes.dart';
 import 'package:food_delivery_app/services/auth/auth_service.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -58,41 +59,41 @@ class _RegisterPageState extends State<RegisterPage> {
         children: [
           Icon(
             Icons.lock_open_rounded,
-            size: 100,
+            size: xLarge,
             color: context.inversePrimaryColor,
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: largeSecond),
           Text(
             "Let's create an account for you",
             style: TextStyle(
-              fontSize: 16,
+              fontSize: mediumSecond,
               color: context.inversePrimaryColor,
             ),
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: largeSecond),
           MyTextfield(
             controller: emailController,
             hintText: 'Email',
             obscureText: false,
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: largeSecond),
           MyTextfield(
             controller: passwordController,
             hintText: 'Password',
             obscureText: true,
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: largeSecond),
           MyTextfield(
             controller: confirmPasswordController,
             hintText: 'Confirm Password',
             obscureText: true,
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: largeSecond),
           MyButton(
             onTap: () => register(),
             text: 'Sign up',
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: largeSecond),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -102,7 +103,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   color: context.inversePrimaryColor,
                 ),
               ),
-              const SizedBox(width: 4),
+              const SizedBox(width: extraXSmall),
               GestureDetector(
                 onTap: widget.onTap,
                 child: Text(

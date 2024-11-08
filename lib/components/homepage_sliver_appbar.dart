@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/colors.dart';
+import 'package:food_delivery_app/constants/numer_sizes.dart';
 import 'package:food_delivery_app/pages/cart_page.dart';
 
 class MySliverAppbar extends StatelessWidget {
@@ -16,8 +17,8 @@ class MySliverAppbar extends StatelessWidget {
     return SliverAppBar(
       backgroundColor: context.surfaceColor,
       foregroundColor: context.inversePrimaryColor,
-      expandedHeight: 340,
-      collapsedHeight: 120,
+      expandedHeight: xXLarge,
+      collapsedHeight: xLargeSecond,
       floating: false,
       pinned: true,
       actions: [
@@ -36,15 +37,15 @@ class MySliverAppbar extends StatelessWidget {
       title: const Text('Sunset Diner'),
       flexibleSpace: FlexibleSpaceBar(
         background: Padding(
-          padding: const EdgeInsets.only(bottom: 50.0),
+          padding: const EdgeInsets.only(bottom:largeFifth),
           child: child,
         ),
         title: title,
         centerTitle: true,
         titlePadding: const EdgeInsets.only(
-          left: 0,
-          right: 0,
-          top: 0,
+          left: zeroNumber,
+          right: zeroNumber,
+          top: zeroNumber,
         ),
         expandedTitleScale: 1,
       ),

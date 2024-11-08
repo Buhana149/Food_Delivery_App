@@ -6,6 +6,7 @@ import 'package:food_delivery_app/components/food_tile.dart';
 import 'package:food_delivery_app/components/homepage_sliver_appbar.dart';
 import 'package:food_delivery_app/components/category_tab_bar.dart';
 import 'package:food_delivery_app/constants/colors.dart';
+import 'package:food_delivery_app/constants/numer_sizes.dart';
 import 'package:food_delivery_app/models/food.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:food_delivery_app/pages/food_page.dart';
@@ -78,8 +79,8 @@ class _HomePageState extends State<HomePage>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Divider(
-                  indent: 25,
-                  endIndent: 25,
+                  indent: largeSecond,
+                  endIndent: largeSecond,
                   color: context.secondaryColor,
                 ),
                 const MyCurrentLocation(),

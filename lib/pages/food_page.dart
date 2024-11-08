@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/universal_custom_button.dart';
 import 'package:food_delivery_app/constants/colors.dart';
+import 'package:food_delivery_app/constants/numer_sizes.dart';
 import 'package:food_delivery_app/models/food.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:provider/provider.dart';
@@ -41,7 +42,7 @@ class _FoodPageState extends State<FoodPage> {
             children: [
               Image.asset(widget.food.imagePath),
               Padding(
-                padding: const EdgeInsets.all(25.0),
+                padding: const EdgeInsets.all(largeSecond),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -49,35 +50,35 @@ class _FoodPageState extends State<FoodPage> {
                       widget.food.name,
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: large,
                       ),
                     ),
                     Text(
                       '\$${widget.food.price}',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: mediumSecond,
                         color: context.primaryColor,
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: small),
                     Text(widget.food.description),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: large),
                     Divider(color: context.secondaryColor),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: small),
                     Text(
                       'Add-ons',
                       style: TextStyle(
                         color: context.inversePrimaryColor,
-                        fontSize: 16,
+                        fontSize: mediumSecond,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: small),
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(color: context.secondaryColor),
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(xSmall),
                       ),
                       child: ListView.builder(
                         shrinkWrap: true,
@@ -111,7 +112,7 @@ class _FoodPageState extends State<FoodPage> {
                 },
                 text: 'Add to cart',
               ),
-              const SizedBox(height: 25),
+              const SizedBox(height: largeSecond),
             ],
           ),
         ),
@@ -120,7 +121,7 @@ class _FoodPageState extends State<FoodPage> {
         child: Opacity(
           opacity: 0.6,
           child: Container(
-            margin: const EdgeInsets.only(left: 25),
+            margin: const EdgeInsets.only(left: largeSecond),
             decoration: BoxDecoration(
               color: context.secondaryColor,
               shape: BoxShape.circle,

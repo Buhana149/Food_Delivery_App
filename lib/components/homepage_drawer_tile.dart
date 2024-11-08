@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/colors.dart';
+import 'package:food_delivery_app/constants/numer_sizes.dart';
 
 class MyDrawerTile extends StatelessWidget {
   final String text;
@@ -15,7 +16,7 @@ class MyDrawerTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 25.0),
+      padding: const EdgeInsets.only(left: largeSecond),
       child: ListTile(
         title: Text(
           text,
