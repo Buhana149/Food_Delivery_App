@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/colors.dart';
-import 'package:food_delivery_app/constants/numer_sizes.dart';
+import 'package:food_delivery_app/constants/number_sizes.dart';
 import 'package:food_delivery_app/models/food.dart';
 
 class FoodTile extends StatelessWidget {
@@ -19,7 +19,7 @@ class FoodTile extends StatelessWidget {
         GestureDetector(
           onTap: onTap,
           child: Padding(
-            padding: const EdgeInsets.all(medium),
+            padding: const EdgeInsets.all(mediumSecond),
             child: Row(
               children: [
                 Expanded(
@@ -41,7 +41,7 @@ class FoodTile extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(width: medium),
+                const SizedBox(width: mediumSecond),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(xSmall),
                   child: Image.asset(

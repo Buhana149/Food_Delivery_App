@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/homepage_drawer_tile.dart';
 import 'package:food_delivery_app/constants/colors.dart';
-import 'package:food_delivery_app/constants/numer_sizes.dart';
+import 'package:food_delivery_app/constants/number_sizes.dart';
 import 'package:food_delivery_app/pages/settings_page.dart';
 import 'package:food_delivery_app/services/auth/auth_service.dart';
 
