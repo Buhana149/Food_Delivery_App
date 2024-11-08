@@ -75,9 +75,7 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
               ),
               Text(
                 'Driver',
-                style: TextStyle(
-                  color: context.primaryColor,
-                ),
+                style: TextStyle().applyPrimaryColor(context),
               ),
             ],
           ),

@@ -99,9 +99,7 @@ class _RegisterPageState extends State<RegisterPage> {
             children: [
               Text(
                 'Already have an account?',
-                style: TextStyle(
-                  color: context.inversePrimaryColor,
-                ),
+                style: TextStyle().applyInverseColor(context),
               ),
               const SizedBox(width: extraXSmall),
               GestureDetector(

@@ -91,7 +91,7 @@ class _FoodPageState extends State<FoodPage> {
                             title: Text(addon.name),
                             subtitle: Text(
                               '\$${addon.price}',
-                              style: TextStyle(color: context.primaryColor),
+                              style: TextStyle().applyPrimaryColor(context),
                             ),
                             value: widget.selectedAddons[addon],
                             onChanged: (bool? value) {

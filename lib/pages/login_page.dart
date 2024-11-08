@@ -78,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Text(
                 'Not a member?',
-                style: TextStyle(color: context.inversePrimaryColor),
+                style: TextStyle().applyInverseColor(context),
               ),
               const SizedBox(width: extraXSmall),
               GestureDetector(

@@ -20,9 +20,7 @@ class MyDrawerTile extends StatelessWidget {
       child: ListTile(
         title: Text(
           text,
-          style: TextStyle(
-            color: context.primaryColor,
-          ),
+          style: TextStyle().applyPrimaryColor(context),
         ),
         leading: Icon(
           icon,

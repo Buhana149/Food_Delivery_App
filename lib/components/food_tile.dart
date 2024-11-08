@@ -29,14 +29,12 @@ class FoodTile extends StatelessWidget {
                       Text(food.name),
                       Text(
                         '\$${food.price}',
-                        style: TextStyle(color: context.primaryColor),
+                        style: TextStyle().applyPrimaryColor(context),
                       ),
                       const SizedBox(height: small),
                       Text(
                         food.description,
-                        style: TextStyle(
-                          color: context.inversePrimaryColor,
-                        ),
+                        style: TextStyle().applyInverseColor(context),
                       ),
                     ],
                   ),

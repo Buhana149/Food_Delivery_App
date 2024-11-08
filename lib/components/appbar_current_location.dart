@@ -45,9 +45,7 @@ class MyCurrentLocation extends StatelessWidget {
         children: [
           Text(
             'Deliver Now',
-            style: TextStyle(
-              color: context.primaryColor,
-            ),
+            style:TextStyle().applyPrimaryColor(context),
           ),
           GestureDetector(
             onTap: () => openLocationSearchBox(context),

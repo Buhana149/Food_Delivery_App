@@ -13,7 +13,11 @@ class MyDescriptionBox extends StatelessWidget {
         borderRadius: BorderRadius.circular(xSmall),
       ),
       padding: const EdgeInsets.all(largeSecond),
-      margin: const EdgeInsets.only(left: largeSecond, right: largeSecond, bottom: largeSecond),
+      margin: const EdgeInsets.only(
+        left: largeSecond,
+        right: largeSecond,
+        bottom: largeSecond,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -21,31 +25,20 @@ class MyDescriptionBox extends StatelessWidget {
             children: [
               Text(
                 '\$0.99',
-                style: TextStyle(
-                  color: context.inversePrimaryColor,
-                ),
+                style: TextStyle().applyPrimaryColor(context),
               ),
               Text(
                 'Delivery fee',
-                style: TextStyle(
-                  color: context.secondaryColor,
-                ),
+                style: TextStyle().applySecondaryColor(context),
               )
             ],
           ),
           Column(
             children: [
-              Text(
-                '15-30 min',
-                style: TextStyle(
-                  color: context.primaryColor,
-                ),
-              ),
+              Text('15-30 min', style: TextStyle().applyPrimaryColor(context)),
               Text(
                 'Delivery time',
-                style: TextStyle(
-                  color: context.secondaryColor,
-                ),
+                style: TextStyle().applySecondaryColor(context),
               )
             ],
           )

@@ -32,9 +32,7 @@ class MyTextfield extends StatelessWidget {
             ),
           ),
           hintText: hintText,
-          hintStyle: TextStyle(
-            color: context.primaryColor,
-          ),
+          hintStyle: TextStyle().applyPrimaryColor(context),
         ),
       ),
     );

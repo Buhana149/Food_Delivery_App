@@ -27,7 +27,7 @@ class MyCartTile extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding:  EdgeInsets.all(xSmall),
+              padding: EdgeInsets.all(xSmall),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -46,9 +46,7 @@ class MyCartTile extends StatelessWidget {
                       Text(cartItem.food.name),
                       Text(
                         '\$${cartItem.food.price}',
-                        style: TextStyle(
-                          color: context.primaryColor,
-                        ),
+                        style: TextStyle().applyPrimaryColor(context),
                       ),
                       const SizedBox(height: small),
                       QuantitySelector(
@@ -78,7 +76,7 @@ class MyCartTile extends StatelessWidget {
                 ),
                 children: cartItem.selectedAddons
                     .map((addon) => Padding(
-                          padding:  EdgeInsets.only(right: xSmall),
+                          padding: EdgeInsets.only(right: xSmall),
                           child: FilterChip(
                             label: Row(
                               children: [
