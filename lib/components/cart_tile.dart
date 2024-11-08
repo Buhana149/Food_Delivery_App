@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/components/my_quantity_selector.dart';
+import 'package:food_delivery_app/components/cart_quantity_selector.dart';
+import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/models/cart_item.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:provider/provider.dart';
@@ -16,9 +17,12 @@ class MyCartTile extends StatelessWidget {
     return Consumer<Restaurant>(
       builder: (context, restaurant, child) => Container(
         decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.secondary,
+            color: context.secondaryColor,
             borderRadius: BorderRadius.circular(8)),
-        margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+        margin: const EdgeInsets.symmetric(
+          horizontal: 25,
+          vertical: 10,
+        ),
         child: Column(
           children: [
             Padding(
@@ -42,7 +46,7 @@ class MyCartTile extends StatelessWidget {
                       Text(
                         '\$${cartItem.food.price}',
                         style: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
+                          color: context.primaryColor,
                         ),
                       ),
                       const SizedBox(height: 10),
@@ -82,15 +86,11 @@ class MyCartTile extends StatelessWidget {
                               ],
                             ),
                             shape: StadiumBorder(
-                                side: BorderSide(
-                              color: Theme.of(context).colorScheme.primary,
-                            )),
+                                side: BorderSide(color: context.primaryColor)),
                             onSelected: (value) {},
-                            backgroundColor:
-                                Theme.of(context).colorScheme.secondary,
+                            backgroundColor: context.secondaryColor,
                             labelStyle: TextStyle(
-                              color:
-                                  Theme.of(context).colorScheme.inversePrimary,
+                              color: context.inversePrimaryColor,
                               fontSize: 12,
                             ),
                           ),

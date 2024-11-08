@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/components/my_receipt.dart';
+import 'package:food_delivery_app/components/final_receipt.dart';
+import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:food_delivery_app/services/database/firestore.dart';
 import 'package:provider/provider.dart';
@@ -25,7 +26,7 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: transparent,
       ),
       bottomNavigationBar: _buildBottomNavigationBar(context),
       body: const Column(
@@ -40,7 +41,7 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
     return Container(
       height: 100,
       decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.secondary,
+          color: context.secondaryColor,
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(40),
             topRight: Radius.circular(40),
@@ -50,7 +51,7 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.surface,
+              color: context.surfaceColor,
               shape: BoxShape.circle,
             ),
             child: IconButton(
@@ -68,13 +69,13 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
-                  color: Theme.of(context).colorScheme.inversePrimary,
+                  color: context.inversePrimaryColor,
                 ),
               ),
               Text(
                 'Driver',
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: context.primaryColor,
                 ),
               ),
             ],
@@ -84,27 +85,27 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
             children: [
               Container(
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surface,
+                  color: context.surfaceColor,
                   shape: BoxShape.circle,
                 ),
                 child: IconButton(
                     onPressed: () {},
                     icon: Icon(
                       Icons.message,
-                      color: Theme.of(context).colorScheme.primary,
+                      color: context.primaryColor,
                     )),
               ),
               SizedBox(width: 10),
               Container(
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surface,
+                  color: context.surfaceColor,
                   shape: BoxShape.circle,
                 ),
                 child: IconButton(
                     onPressed: () {},
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.call,
-                      color: Colors.green,
+                      color: green,
                     )),
               ),
             ],

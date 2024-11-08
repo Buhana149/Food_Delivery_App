@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:provider/provider.dart';
 
 class MyCurrentLocation extends StatelessWidget {
   const MyCurrentLocation({super.key});
-
-  
 
   void openLocationSearchBox(BuildContext context) {
     TextEditingController textController = TextEditingController();
@@ -13,7 +12,7 @@ class MyCurrentLocation extends StatelessWidget {
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('Your location'),
-        content:  TextField(
+        content: TextField(
           controller: textController,
           decoration: InputDecoration(hintText: 'Enter address...'),
         ),
@@ -46,7 +45,7 @@ class MyCurrentLocation extends StatelessWidget {
           Text(
             'Deliver Now',
             style: TextStyle(
-              color: Theme.of(context).colorScheme.primary,
+              color: context.primaryColor,
             ),
           ),
           GestureDetector(
@@ -57,7 +56,7 @@ class MyCurrentLocation extends StatelessWidget {
                   builder: (context, restaurant, child) => Text(
                     restaurant.deliveryAddress,
                     style: TextStyle(
-                      color: Theme.of(context).colorScheme.inversePrimary,
+                      color: context.inversePrimaryColor,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutterme_credit_card/flutterme_credit_card/field.dart';
 import 'package:flutterme_credit_card/flutterme_credit_card/utils/constants.dart';
 import 'package:flutterme_credit_card/flutterme_credit_card/widgets/card/credit_card.dart';
-import 'package:food_delivery_app/components/my_button.dart';
+import 'package:food_delivery_app/components/universal_custom_button.dart';
+import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/pages/delivery_progress_page.dart';
 
 class PaymentPage extends StatefulWidget {
@@ -59,10 +60,10 @@ class _PaymentPageState extends State<PaymentPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
+      backgroundColor: context.surfaceColor,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        foregroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: transparent,
+        foregroundColor: context.inversePrimaryColor,
         title: const Text('Checkout'),
       ),
       body: Column(
@@ -85,7 +86,7 @@ class _PaymentPageState extends State<PaymentPage> {
                 children: [
                   FMHolderField(
                     controller: cardHolderName,
-                    cursorColor: const Color(0xFF49B7AE),
+                    cursorColor: turqoise,
                     decoration: InputDecoration(
                       labelText: "Card Holder",
                       hintText: "John Doe",
@@ -94,7 +95,7 @@ class _PaymentPageState extends State<PaymentPage> {
                   const SizedBox(height: 30),
                   FMNumberField(
                     controller: cardNumber,
-                    cursorColor: const Color(0xFF49B7AE),
+                    cursorColor: turqoise,
                     decoration: InputDecoration(
                       labelText: "Card Number",
                       hintText: "0000 0000 0000 0000",
@@ -107,15 +108,17 @@ class _PaymentPageState extends State<PaymentPage> {
                       Flexible(
                         child: FMValidThruField(
                           controller: expiryDate,
-                          cursorColor: const Color(0xFF49B7AE),
-                          decoration: const InputDecoration(
+                          cursorColor: turqoise,
+                          decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Color(0xFF49B7AE),
+                                color: turqoise,
                               ),
                             ),
-                            labelStyle: TextStyle(color: Color(0xFF49B7AE)),
+                            labelStyle: TextStyle(
+                              color: turqoise,
+                            ),
                             labelText: "Valid Thru",
                             hintText: "****",
                           ),
@@ -125,7 +128,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       Flexible(
                         child: FMCvvField(
                           controller: cvvCode,
-                          cursorColor: const Color(0xFF49B7AE),
+                          cursorColor: turqoise,
                           decoration: InputDecoration(
                             labelText: "CVV",
                             hintText: "***",
