@@ -1,16 +1,9 @@
-# food_delivery_app
+# Food Delivery App
 
-A new Flutter project.
+I developed a delivery app using Flutter that incorporates key functionalities for a seamless user experience. The app implements Firebase Authentication for secure user login and registration, ensuring that users’ accounts are well-protected. Additionally, it uses Firebase Realtime Database to store and retrieve user-specific data efficiently, providing fast, reliable access to relevant information. The payment experience is enhanced with a specialized payment package that simulates credit card. To cater to user preferences, the app also includes light and dark mode options, giving users control over their display settings based on their environment and comfort.
 
-## Getting Started
+[![Watch the Video]](https://drive.google.com/file/d/13jwCitHS_5ynbLyC1fU1sR7oq6oGZflU/view?usp=sharing)
+ 
+![Thumbnail](https://drive.google.com/uc?export=view&id=1RLJMdXqJNBA0gCyysXuxHZpf0HJps9Li)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
