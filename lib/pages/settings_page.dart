@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/colors.dart';
+import 'package:food_delivery_app/constants/number_sizes.dart';
 import 'package:food_delivery_app/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -20,14 +21,14 @@ class SettingsPage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               color: context.secondaryColor,
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(smallSecond),
             ),
             margin: const EdgeInsets.only(
-              left: 25,
-              top: 10,
-              right: 25,
+              left: largeSecond,
+              top: small,
+              right: largeSecond,
             ),
-            padding: const EdgeInsets.all(25),
+            padding: const EdgeInsets.all(largeSecond),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

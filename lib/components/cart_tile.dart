@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/cart_quantity_selector.dart';
 import 'package:food_delivery_app/constants/colors.dart';
+import 'package:food_delivery_app/constants/number_sizes.dart';
+import 'package:food_delivery_app/constants/text_style_extension.dart';
 import 'package:food_delivery_app/models/cart_item.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:provider/provider.dart';
@@ -18,38 +20,36 @@ class MyCartTile extends StatelessWidget {
       builder: (context, restaurant, child) => Container(
         decoration: BoxDecoration(
             color: context.secondaryColor,
-            borderRadius: BorderRadius.circular(8)),
+            borderRadius: BorderRadius.circular(xSmall)),
         margin: const EdgeInsets.symmetric(
-          horizontal: 25,
-          vertical: 10,
+          horizontal: largeSecond,
+          vertical: small,
         ),
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(xSmall),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(xSmall),
                     child: Image.asset(
                       cartItem.food.imagePath,
-                      height: 100,
-                      width: 100,
+                      height: xLarge,
+                      width: xLarge,
                     ),
                   ),
-                  const SizedBox(width: 10),
+                  const SizedBox(width: small),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(cartItem.food.name),
                       Text(
                         '\$${cartItem.food.price}',
-                        style: TextStyle(
-                          color: context.primaryColor,
-                        ),
+                        style: TextStyle().primaryColor(context),
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: small),
                       QuantitySelector(
                         quantity: cartItem.quantity,
                         food: cartItem.food,
@@ -67,17 +67,17 @@ class MyCartTile extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: cartItem.selectedAddons.isEmpty ? 0 : 60,
+              height: cartItem.selectedAddons.isEmpty ? zeroNumber : largeSixth,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.only(
-                  left: 10,
-                  bottom: 10,
-                  right: 10,
+                  left: small,
+                  bottom: small,
+                  right: small,
                 ),
                 children: cartItem.selectedAddons
                     .map((addon) => Padding(
-                          padding: const EdgeInsets.only(right: 8.0),
+                          padding: EdgeInsets.only(right: xSmall),
                           child: FilterChip(
                             label: Row(
                               children: [
@@ -91,7 +91,7 @@ class MyCartTile extends StatelessWidget {
                             backgroundColor: context.secondaryColor,
                             labelStyle: TextStyle(
                               color: context.inversePrimaryColor,
-                              fontSize: 12,
+                              fontSize: smallSecond,
                             ),
                           ),
                         ))

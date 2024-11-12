@@ -8,6 +8,8 @@ extension ThemeColorExtension on BuildContext {
   Color get tertiaryColor => Theme.of(this).colorScheme.tertiary;
 }
 
+
+
 Color? transparent = Colors.transparent;
 Color? green = Colors.green;
 Color turqoise = const Color(0xFF49B7AE);

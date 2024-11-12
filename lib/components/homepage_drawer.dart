@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/homepage_drawer_tile.dart';
 import 'package:food_delivery_app/constants/colors.dart';
+import 'package:food_delivery_app/constants/number_sizes.dart';
 import 'package:food_delivery_app/pages/settings_page.dart';
 import 'package:food_delivery_app/services/auth/auth_service.dart';
 
@@ -19,15 +20,15 @@ class MyDrawer extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 100.0),
+            padding: const EdgeInsets.only(top: xLarge),
             child: Icon(
               Icons.lock_open_rounded,
-              size: 80,
+              size: largeSeventh,
               color: context.inversePrimaryColor,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(25.0),
+            padding: const EdgeInsets.all(largeSecond),
             child: Divider(
               color: context.secondaryColor,
             ),
@@ -55,7 +56,7 @@ class MyDrawer extends StatelessWidget {
             icon: Icons.logout,
             onTap: () => logout(),
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: largeSecond),
         ],
       ),
     );

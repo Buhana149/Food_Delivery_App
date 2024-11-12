@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/final_receipt.dart';
 import 'package:food_delivery_app/constants/colors.dart';
+import 'package:food_delivery_app/constants/number_sizes.dart';
+import 'package:food_delivery_app/constants/text_style_extension.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:food_delivery_app/services/database/firestore.dart';
 import 'package:provider/provider.dart';
@@ -39,14 +41,14 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
 
   Widget _buildBottomNavigationBar(BuildContext context) {
     return Container(
-      height: 100,
+      height: xLarge,
       decoration: BoxDecoration(
           color: context.secondaryColor,
           borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(40),
-            topRight: Radius.circular(40),
+            topLeft: Radius.circular(largeFourth),
+            topRight: Radius.circular(largeFourth),
           )),
-      padding: const EdgeInsets.all(25),
+      padding: const EdgeInsets.all(largeSecond),
       child: Row(
         children: [
           Container(
@@ -60,7 +62,7 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
                   Icons.person,
                 )),
           ),
-          const SizedBox(width: 10),
+          const SizedBox(width: small),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -68,15 +70,13 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
                 'Pop Popescu',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 18,
+                  fontSize: large,
                   color: context.inversePrimaryColor,
                 ),
               ),
               Text(
                 'Driver',
-                style: TextStyle(
-                  color: context.primaryColor,
-                ),
+                style: TextStyle().primaryColor(context),
               ),
             ],
           ),
@@ -95,7 +95,7 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
                       color: context.primaryColor,
                     )),
               ),
-              SizedBox(width: 10),
+              SizedBox(width: small),
               Container(
                 decoration: BoxDecoration(
                   color: context.surfaceColor,

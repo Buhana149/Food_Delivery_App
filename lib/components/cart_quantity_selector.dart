@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/colors.dart';
+import 'package:food_delivery_app/constants/number_sizes.dart';
 import 'package:food_delivery_app/models/food.dart';
 
 class QuantitySelector extends StatelessWidget {
@@ -19,8 +20,10 @@ class QuantitySelector extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: context.surfaceColor, borderRadius: BorderRadius.circular(50)),
-      padding: const EdgeInsets.all(8),
+        color: context.surfaceColor,
+        borderRadius: BorderRadius.circular(largeFifth),
+      ),
+      padding: EdgeInsets.all(xSmall),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -28,14 +31,14 @@ class QuantitySelector extends StatelessWidget {
             onTap: onDecrement,
             child: Icon(
               Icons.remove,
-              size: 20,
+              size: large,
               color: context.primaryColor,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            padding: EdgeInsets.symmetric(horizontal: xSmall),
             child: SizedBox(
-              width: 20,
+              width: large,
               child: Center(
                 child: Text(quantity.toString()),
               ),
@@ -45,7 +48,7 @@ class QuantitySelector extends StatelessWidget {
             onTap: onIncrement,
             child: Icon(
               Icons.add,
-              size: 20,
+              size: large,
               color: context.primaryColor,
             ),
           )
