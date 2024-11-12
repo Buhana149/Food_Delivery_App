@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/constants/number_sizes.dart';
+import 'package:food_delivery_app/constants/text_style_extension.dart';
 
 class MyDrawerTile extends StatelessWidget {
   final String text;
@@ -20,7 +21,7 @@ class MyDrawerTile extends StatelessWidget {
       child: ListTile(
         title: Text(
           text,
-          style: TextStyle().applyPrimaryColor(context),
+          style: TextStyle().primaryColor(context),
         ),
         leading: Icon(
           icon,

@@ -3,6 +3,7 @@ import 'package:food_delivery_app/components/universal_custom_button.dart';
 import 'package:food_delivery_app/components/universal_custom_textfield.dart';
 import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/constants/number_sizes.dart';
+import 'package:food_delivery_app/constants/text_style_extension.dart';
 import 'package:food_delivery_app/services/auth/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
@@ -78,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Text(
                 'Not a member?',
-                style: TextStyle().applyInverseColor(context),
+                style: TextStyle().inverseColor(context),
               ),
               const SizedBox(width: extraXSmall),
               GestureDetector(

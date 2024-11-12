@@ -8,18 +8,7 @@ extension ThemeColorExtension on BuildContext {
   Color get tertiaryColor => Theme.of(this).colorScheme.tertiary;
 }
 
-extension TextStyleExtension on TextStyle {
-  TextStyle applyPrimaryColor(BuildContext context) {
-    return copyWith(color: Theme.of(context).colorScheme.primary);
-  }
 
-  TextStyle applySecondaryColor(BuildContext context) {
-    return copyWith(color: Theme.of(context).colorScheme.secondary);
-  }
-   TextStyle applyInverseColor(BuildContext context) {
-    return copyWith(color: Theme.of(context).colorScheme.inversePrimary);
-  }
-}
 
 Color? transparent = Colors.transparent;
 Color? green = Colors.green;

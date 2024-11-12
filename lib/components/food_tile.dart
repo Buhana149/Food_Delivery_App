@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/constants/number_sizes.dart';
+import 'package:food_delivery_app/constants/text_style_extension.dart';
 import 'package:food_delivery_app/models/food.dart';
 
 class FoodTile extends StatelessWidget {
@@ -29,12 +30,12 @@ class FoodTile extends StatelessWidget {
                       Text(food.name),
                       Text(
                         '\$${food.price}',
-                        style: TextStyle().applyPrimaryColor(context),
+                        style: TextStyle().primaryColor(context),
                       ),
                       const SizedBox(height: small),
                       Text(
                         food.description,
-                        style: TextStyle().applyInverseColor(context),
+                        style: TextStyle().inverseColor(context),
                       ),
                     ],
                   ),

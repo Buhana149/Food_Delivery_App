@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/cart_quantity_selector.dart';
 import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/constants/number_sizes.dart';
+import 'package:food_delivery_app/constants/text_style_extension.dart';
 import 'package:food_delivery_app/models/cart_item.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:provider/provider.dart';
@@ -46,7 +47,7 @@ class MyCartTile extends StatelessWidget {
                       Text(cartItem.food.name),
                       Text(
                         '\$${cartItem.food.price}',
-                        style: TextStyle().applyPrimaryColor(context),
+                        style: TextStyle().primaryColor(context),
                       ),
                       const SizedBox(height: small),
                       QuantitySelector(

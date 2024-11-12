@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/universal_custom_button.dart';
 import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/constants/number_sizes.dart';
+import 'package:food_delivery_app/constants/text_style_extension.dart';
 import 'package:food_delivery_app/models/food.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:provider/provider.dart';
@@ -91,7 +92,7 @@ class _FoodPageState extends State<FoodPage> {
                             title: Text(addon.name),
                             subtitle: Text(
                               '\$${addon.price}',
-                              style: TextStyle().applyPrimaryColor(context),
+                              style: TextStyle().primaryColor(context),
                             ),
                             value: widget.selectedAddons[addon],
                             onChanged: (bool? value) {

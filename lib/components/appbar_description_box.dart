@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/constants/number_sizes.dart';
+import 'package:food_delivery_app/constants/text_style_extension.dart';
 
 class MyDescriptionBox extends StatelessWidget {
   const MyDescriptionBox({super.key});
@@ -25,20 +25,20 @@ class MyDescriptionBox extends StatelessWidget {
             children: [
               Text(
                 '\$0.99',
-                style: TextStyle().applyPrimaryColor(context),
+                style: TextStyle().primaryColor(context),
               ),
               Text(
                 'Delivery fee',
-                style: TextStyle().applySecondaryColor(context),
+                style: TextStyle().secondaryColor(context),
               )
             ],
           ),
           Column(
             children: [
-              Text('15-30 min', style: TextStyle().applyPrimaryColor(context)),
+              Text('15-30 min', style: TextStyle().primaryColor(context)),
               Text(
                 'Delivery time',
-                style: TextStyle().applySecondaryColor(context),
+                style: TextStyle().secondaryColor(context),
               )
             ],
           )

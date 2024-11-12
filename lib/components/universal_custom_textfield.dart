@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/constants/number_sizes.dart';
+import 'package:food_delivery_app/constants/text_style_extension.dart';
 
 class MyTextfield extends StatelessWidget {
   final TextEditingController controller;
@@ -32,7 +33,7 @@ class MyTextfield extends StatelessWidget {
             ),
           ),
           hintText: hintText,
-          hintStyle: TextStyle().applyPrimaryColor(context),
+          hintStyle: TextStyle().primaryColor(context),
         ),
       ),
     );

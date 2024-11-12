@@ -3,6 +3,7 @@ import 'package:food_delivery_app/components/universal_custom_button.dart';
 import 'package:food_delivery_app/components/universal_custom_textfield.dart';
 import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/constants/number_sizes.dart';
+import 'package:food_delivery_app/constants/text_style_extension.dart';
 import 'package:food_delivery_app/services/auth/auth_service.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -99,7 +100,7 @@ class _RegisterPageState extends State<RegisterPage> {
             children: [
               Text(
                 'Already have an account?',
-                style: TextStyle().applyInverseColor(context),
+                style: TextStyle().inverseColor(context),
               ),
               const SizedBox(width: extraXSmall),
               GestureDetector(
